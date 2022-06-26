@@ -1,0 +1,15 @@
+# Booo, hardcode, boooo!
+# shellcheck disable=SC2148
+DOTFILES_ROOT="$HOME/.dotfiles"
+
+export PATH="$HOME/bin:$DOTFILES_ROOT/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
+alias ls="ls --color=auto"
+alias ll="ls -lA --color=auto"
+alias la="ls -A --color=auto"
+
+find "${DOTFILES_ROOT}" -type f -name "conf.sh" |
+    while read -r conf; do
+      # shellcheck disable=SC1090
+      source "${conf}"
+    done

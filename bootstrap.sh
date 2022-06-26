@@ -1,5 +1,6 @@
 #!/bin/sh
 cd "$(dirname "$0")" || exit 1
+
 DOTFILES_ROOT="$(pwd -P)"
 CLEAR="\033[0m"
 BLUE="\033[0;34m"
@@ -37,10 +38,10 @@ link_files() {
     done
 }
 
+link_files
+
 if install_modules; then
   echo "${GREEN}Modules installed${CLEAR}"
 else
   echo "${RED}Error installing modules, check output!${CLEAR}"
 fi
-
-link_files
