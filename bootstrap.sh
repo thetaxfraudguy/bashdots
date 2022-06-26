@@ -45,3 +45,5 @@ if install_modules; then
 else
   echo "${RED}Error installing modules, check output!${CLEAR}"
 fi
+
+mkdir -p "$HOME/Projects/IslandOfMisfitToys"
