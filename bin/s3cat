@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# TODO: add help and option to pass profile
+aws s3 cp "s3://$1" -
